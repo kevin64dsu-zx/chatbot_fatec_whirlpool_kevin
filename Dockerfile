@@ -1,0 +1,15 @@
+FROM python:3-alpine
+
+ENV GEMINI_API_KEY=
+
+WORKDIR /app
+
+COPY . .
+
+RUN pip install Flask
+
+RUN pip install -U google-genai
+
+RUN pip install python-dotenv
+
+CMD flask --app app run --debug --host 0.0.0.0

@@ -1,0 +1,23 @@
+<!-- templates/history.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Histórico do Chat</title>
+</head>
+<body>
+    <h1>Histórico de Conversas</h1>
+    {% if history %}
+        <ul>
+        {% for entry in history %}
+            <li>
+                <strong>{{ entry.role }}:</strong> {{ entry.content }} 
+                <em>({{ entry.timestamp }})</em>
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Nenhuma mensagem registrada ainda.</p>
+    {% endif %}
+</body>
+</html>
